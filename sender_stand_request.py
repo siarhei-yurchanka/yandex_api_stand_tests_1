@@ -1,7 +1,7 @@
 import data
 import configuration
 import requests
-#from sender_stand_request import *
+
 
 def grep_token(user_body):
    response = requests.post(configuration.URL_SERVICE + configuration.CREATE_USER_PATH,
@@ -11,9 +11,6 @@ def grep_token(user_body):
    token = response.json()
    value = token.get('authToken')
    return value
-
-#token_x = grep_token(data.user_body)
-
 
 
 def post_new_client_kit(full_kit, token):
@@ -25,7 +22,10 @@ def post_new_client_kit(full_kit, token):
                          )
 
 response = post_new_client_kit(data.kit_body, grep_token(data.user_body))
-#print(response.status_code)
-#print(response.json())
 
-#"auth_token": token_x
+
+def post_new_client_kit_name_0(kit_body_0, token):
+    return requests.post(configuration.URL_SERVICE + configuration.CREATE_USER_KITS,
+                         json=kit_body_0,
+                         headers= {"Content-Type": "application/json", "Authorization": f"Bearer {token}"})
+response = post_new_client_kit(data.kit_body_0, grep_token(data.user_body))

@@ -2,12 +2,14 @@
 headers = {"Content-Type": "application/json"}
 
 user_body = {
-    "firstName": "Анатолий",
+    "firstName":"Анатолий",
     "phone": "+79995553322",
     "address": "г. Москва, ул. Пушкина, д. 10"
 }
 
 kit_body = {
-    "name": ""
+    "name":"123"
 }
 
+kit_body_0 ={
+}
